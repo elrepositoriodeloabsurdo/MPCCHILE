@@ -1,0 +1,271 @@
+{
+  "meta": {
+    "name": "VibeCodingChile Compliance Ontology",
+    "version": "0.1.0",
+    "source": "Extraída de Gobernador IA / CheckWizard + conceptos construidos para cobertura completa",
+    "frameworks": ["ley_21719", "iso_42001", "eu_ai_act", "gobernanza_ia"],
+    "languages": ["es", "en"]
+  },
+  "branches": [
+    {"id": "ley_21719", "label_es": "Ley N°21.719 - Protección de Datos Personales (Chile)", "label_en": "Chilean Personal Data Protection Law"},
+    {"id": "iso_42001", "label_es": "ISO/IEC 42001 - Sistema de Gestión de IA", "label_en": "AI Management System"},
+    {"id": "eu_ai_act", "label_es": "EU AI Act - Marco de Riesgo", "label_en": "EU AI Act Risk Framework"},
+    {"id": "gobernanza_ia", "label_es": "Gobernador IA - Arquitectura y Terminología Propia", "label_en": "Gobernador IA Architecture & Proprietary Terms"}
+  ],
+  "concepts": [
+    {"id": "proteccion_datos_root", "branch": "ley_21719", "parent": null,
+     "label_es": "Protección de Datos Personales", "label_en": "Personal Data Protection",
+     "definition_es": "Marco jurídico chileno (Ley N°21.719) que regula el tratamiento de datos personales, estableciendo bases de licitud, derechos ARCO, obligaciones de responsables y encargados de tratamiento, y la institucionalidad fiscalizadora (APDP).",
+     "aliases": ["Ley 21.719", "LPDP Chile"], "frameworks": ["ley_21719"]},
+
+    {"id": "dato_personal", "branch": "ley_21719", "parent": "proteccion_datos_root",
+     "label_es": "Dato Personal", "label_en": "Personal Data",
+     "definition_es": "Cualquier información vinculada o referida a una persona natural identificada o identificable.",
+     "aliases": [], "frameworks": ["ley_21719"]},
+
+    {"id": "dato_sensible", "branch": "ley_21719", "parent": "dato_personal",
+     "label_es": "Dato Sensible", "label_en": "Sensitive Data",
+     "definition_es": "Categoría especial de dato personal (salud, origen étnico, afiliación sindical, biométricos, etc.) sujeta a mayores exigencias de tratamiento.",
+     "aliases": [], "frameworks": ["ley_21719"]},
+
+    {"id": "tratamiento_datos", "branch": "ley_21719", "parent": "proteccion_datos_root",
+     "label_es": "Tratamiento de Datos", "label_en": "Data Processing",
+     "definition_es": "Cualquier operación o conjunto de operaciones efectuadas sobre datos personales, tales como recolección, almacenamiento, uso, comunicación o supresión.",
+     "aliases": [], "frameworks": ["ley_21719"]},
+
+    {"id": "responsable_tratamiento", "branch": "ley_21719", "parent": "proteccion_datos_root",
+     "label_es": "Responsable del Tratamiento", "label_en": "Data Controller",
+     "definition_es": "Persona natural o jurídica, pública o privada, que decide sobre el tratamiento y finalidad de los datos personales.",
+     "aliases": ["Data Controller"], "frameworks": ["ley_21719"]},
+
+    {"id": "encargado_tratamiento", "branch": "ley_21719", "parent": "proteccion_datos_root",
+     "label_es": "Encargado del Tratamiento", "label_en": "Data Processor",
+     "definition_es": "Persona natural o jurídica que trata datos personales por cuenta del responsable, en virtud de un vínculo contractual (DPA).",
+     "aliases": ["Data Processor"], "frameworks": ["ley_21719"]},
+
+    {"id": "base_licitud", "branch": "ley_21719", "parent": "proteccion_datos_root",
+     "label_es": "Base de Licitud", "label_en": "Legal Basis for Processing",
+     "definition_es": "Fundamento jurídico que habilita el tratamiento de datos personales (consentimiento, ejecución de contrato, obligación legal, interés legítimo, misión de interés público, entre otras).",
+     "aliases": ["Base de Legitimación"], "frameworks": ["ley_21719"]},
+
+    {"id": "consentimiento", "branch": "ley_21719", "parent": "base_licitud",
+     "label_es": "Consentimiento", "label_en": "Consent",
+     "definition_es": "Manifestación de voluntad libre, informada, específica e inequívoca del titular para el tratamiento de sus datos personales.",
+     "aliases": [], "frameworks": ["ley_21719"]},
+
+    {"id": "interes_legitimo", "branch": "ley_21719", "parent": "base_licitud",
+     "label_es": "Interés Legítimo", "label_en": "Legitimate Interest",
+     "definition_es": "Base de licitud que habilita el tratamiento cuando prevalece el interés del responsable o de un tercero sobre los derechos del titular, previa ponderación.",
+     "aliases": [], "frameworks": ["ley_21719"]},
+
+    {"id": "ejecucion_contractual", "branch": "ley_21719", "parent": "base_licitud",
+     "label_es": "Ejecución Contractual", "label_en": "Contractual Necessity",
+     "definition_es": "Base de licitud aplicable cuando el tratamiento es necesario para la ejecución de un contrato del que el titular es parte.",
+     "aliases": [], "frameworks": ["ley_21719"]},
+
+    {"id": "obligacion_legal", "branch": "ley_21719", "parent": "base_licitud",
+     "label_es": "Obligación Legal", "label_en": "Legal Obligation",
+     "definition_es": "Base de licitud aplicable cuando el tratamiento es necesario para el cumplimiento de una obligación legal del responsable.",
+     "aliases": [], "frameworks": ["ley_21719"]},
+
+    {"id": "derechos_arco", "branch": "ley_21719", "parent": "proteccion_datos_root",
+     "label_es": "Derechos ARCO", "label_en": "ARCO Rights",
+     "definition_es": "Conjunto de derechos del titular de datos: Acceso, Rectificación, Cancelación y Oposición, ampliados por la Ley 21.719 a portabilidad y bloqueo.",
+     "aliases": [], "frameworks": ["ley_21719"]},
+
+    {"id": "derecho_acceso", "branch": "ley_21719", "parent": "derechos_arco",
+     "label_es": "Derecho de Acceso", "label_en": "Right of Access",
+     "definition_es": "Derecho del titular a obtener confirmación y detalle del tratamiento que se realiza sobre sus datos personales.",
+     "aliases": [], "frameworks": ["ley_21719"]},
+
+    {"id": "derecho_rectificacion", "branch": "ley_21719", "parent": "derechos_arco",
+     "label_es": "Derecho de Rectificación", "label_en": "Right to Rectification",
+     "definition_es": "Derecho del titular a corregir datos personales inexactos o incompletos.",
+     "aliases": [], "frameworks": ["ley_21719"]},
+
+    {"id": "derecho_cancelacion", "branch": "ley_21719", "parent": "derechos_arco",
+     "label_es": "Derecho de Cancelación", "label_en": "Right to Erasure",
+     "definition_es": "Derecho del titular a solicitar la supresión de sus datos personales cuando ya no sean necesarios o el tratamiento sea ilícito.",
+     "aliases": ["Derecho al Olvido"], "frameworks": ["ley_21719"]},
+
+    {"id": "derecho_oposicion", "branch": "ley_21719", "parent": "derechos_arco",
+     "label_es": "Derecho de Oposición", "label_en": "Right to Object",
+     "definition_es": "Derecho del titular a oponerse al tratamiento de sus datos personales por motivos fundados.",
+     "aliases": [], "frameworks": ["ley_21719"]},
+
+    {"id": "derecho_portabilidad", "branch": "ley_21719", "parent": "derechos_arco",
+     "label_es": "Derecho de Portabilidad", "label_en": "Right to Data Portability",
+     "definition_es": "Derecho del titular a recibir sus datos personales en un formato estructurado y de uso común, o a transmitirlos a otro responsable.",
+     "aliases": [], "frameworks": ["ley_21719"]},
+
+    {"id": "eipd", "branch": "ley_21719", "parent": "proteccion_datos_root",
+     "label_es": "Evaluación de Impacto en la Protección de Datos (EIPD)", "label_en": "Data Protection Impact Assessment (DPIA)",
+     "definition_es": "Análisis previo obligatorio cuando el tratamiento entraña alto riesgo para los derechos de los titulares, exigido por la Ley 21.719 para tratamientos de alto riesgo (incluye sistemas de IA con impacto significativo).",
+     "aliases": ["DPIA"], "frameworks": ["ley_21719"]},
+
+    {"id": "dpa", "branch": "ley_21719", "parent": "proteccion_datos_root",
+     "label_es": "Acuerdo de Tratamiento de Datos (DPA)", "label_en": "Data Processing Agreement",
+     "definition_es": "Contrato entre responsable y encargado de tratamiento que fija el objeto, duración, naturaleza, finalidad y obligaciones respecto del tratamiento de datos personales.",
+     "aliases": ["DPA"], "frameworks": ["ley_21719"]},
+
+    {"id": "apdp", "branch": "ley_21719", "parent": "proteccion_datos_root",
+     "label_es": "Agencia de Protección de Datos Personales (APDP)", "label_en": "Chilean Data Protection Agency",
+     "definition_es": "Organismo autónomo chileno creado por la Ley 21.719 encargado de fiscalizar, sancionar y promover el cumplimiento normativo en materia de protección de datos.",
+     "aliases": ["APDP"], "frameworks": ["ley_21719"]},
+
+    {"id": "oficial_proteccion_datos", "branch": "ley_21719", "parent": "proteccion_datos_root",
+     "label_es": "Delegado de Protección de Datos (DPO)", "label_en": "Data Protection Officer",
+     "definition_es": "Persona designada para supervisar el cumplimiento normativo en materia de protección de datos dentro de una organización.",
+     "aliases": ["DPO"], "frameworks": ["ley_21719"]},
+
+    {"id": "brecha_seguridad", "branch": "ley_21719", "parent": "proteccion_datos_root",
+     "label_es": "Brecha de Seguridad de Datos", "label_en": "Data Security Breach",
+     "definition_es": "Incidente que compromete la confidencialidad, integridad o disponibilidad de datos personales, sujeto a deber de notificación a la APDP y, en su caso, a los titulares afectados.",
+     "aliases": ["Data Breach"], "frameworks": ["ley_21719"]},
+
+    {"id": "transferencia_internacional", "branch": "ley_21719", "parent": "proteccion_datos_root",
+     "label_es": "Transferencia Internacional de Datos", "label_en": "International Data Transfer",
+     "definition_es": "Comunicación de datos personales a un responsable o encargado ubicado fuera de Chile, sujeta a garantías adecuadas de protección.",
+     "aliases": [], "frameworks": ["ley_21719"]},
+
+    {"id": "actor_cadena_responsabilidad", "branch": "ley_21719", "parent": "proteccion_datos_root",
+     "label_es": "Cadena de Responsabilidad de Actores (IMDA)", "label_en": "Actor Chain of Responsibility",
+     "definition_es": "Marco de trazabilidad que identifica y distribuye responsabilidad entre los distintos actores (proveedor, implementador, distribuidor, usuario) que intervienen en el ciclo de vida de un sistema de IA que trata datos personales, integrando el enfoque IMDA (Infocomm Media Development Authority) de cadena de responsabilidad.",
+     "aliases": ["IMDA Chain of Responsibility"], "frameworks": ["ley_21719", "gobernanza_ia"]},
+
+    {"id": "iso42001_root", "branch": "iso_42001", "parent": null,
+     "label_es": "Sistema de Gestión de IA (SGIA)", "label_en": "AI Management System (AIMS)",
+     "definition_es": "Marco normativo ISO/IEC 42001 que establece requisitos para establecer, implementar, mantener y mejorar continuamente un sistema de gestión de inteligencia artificial dentro de una organización.",
+     "aliases": ["ISO 42001", "AIMS"], "frameworks": ["iso_42001"]},
+
+    {"id": "proveedor_ia", "branch": "iso_42001", "parent": "iso42001_root",
+     "label_es": "Proveedor de IA", "label_en": "AI Provider",
+     "definition_es": "Organización que desarrolla y pone a disposición un sistema de IA en el mercado.",
+     "aliases": [], "frameworks": ["iso_42001", "eu_ai_act"]},
+
+    {"id": "desarrollador_ia", "branch": "iso_42001", "parent": "iso42001_root",
+     "label_es": "Desarrollador de IA", "label_en": "AI Developer",
+     "definition_es": "Rol organizacional responsable del diseño, entrenamiento y construcción técnica de un sistema de IA.",
+     "aliases": [], "frameworks": ["iso_42001"]},
+
+    {"id": "usuario_ia", "branch": "iso_42001", "parent": "iso42001_root",
+     "label_es": "Usuario/Implementador de IA", "label_en": "AI User / Deployer",
+     "definition_es": "Organización o persona que utiliza un sistema de IA bajo su propia autoridad, salvo cuando el sistema se usa en el marco de una actividad personal no profesional.",
+     "aliases": ["AI Deployer"], "frameworks": ["iso_42001", "eu_ai_act"]},
+
+    {"id": "evaluacion_riesgo_ia", "branch": "iso_42001", "parent": "iso42001_root",
+     "label_es": "Evaluación de Riesgo de IA", "label_en": "AI Risk Assessment",
+     "definition_es": "Proceso sistemático de identificación, análisis y valoración de riesgos asociados al desarrollo, despliegue y operación de un sistema de IA.",
+     "aliases": [], "frameworks": ["iso_42001"]},
+
+    {"id": "evaluacion_impacto_sistema_ia", "branch": "iso_42001", "parent": "iso42001_root",
+     "label_es": "Evaluación de Impacto del Sistema de IA", "label_en": "AI System Impact Assessment",
+     "definition_es": "Análisis de los efectos potenciales de un sistema de IA sobre personas, grupos y sociedad, incluyendo riesgos a derechos fundamentales.",
+     "aliases": ["AISIA"], "frameworks": ["iso_42001"]},
+
+    {"id": "supervision_humana", "branch": "iso_42001", "parent": "iso42001_root",
+     "label_es": "Supervisión Humana", "label_en": "Human Oversight",
+     "definition_es": "Capacidad de una persona de intervenir, supervisar o detener el funcionamiento de un sistema de IA, correspondiente al patrón Human-in-the-loop (HITL).",
+     "aliases": ["Human Oversight", "HITL"], "frameworks": ["iso_42001", "eu_ai_act", "gobernanza_ia"]},
+
+    {"id": "ciclo_vida_sistema_ia", "branch": "iso_42001", "parent": "iso42001_root",
+     "label_es": "Ciclo de Vida del Sistema de IA", "label_en": "AI System Lifecycle",
+     "definition_es": "Conjunto de fases desde el diseño, desarrollo, validación, despliegue, operación hasta el retiro de un sistema de IA.",
+     "aliases": [], "frameworks": ["iso_42001"]},
+
+    {"id": "euaiact_root", "branch": "eu_ai_act", "parent": null,
+     "label_es": "EU AI Act - Marco de Riesgo", "label_en": "EU AI Act Risk Framework",
+     "definition_es": "Reglamento de la Unión Europea que clasifica los sistemas de IA según su nivel de riesgo y establece obligaciones diferenciadas para proveedores e implementadores.",
+     "aliases": ["Reglamento de IA de la UE"], "frameworks": ["eu_ai_act"]},
+
+    {"id": "riesgo_inaceptable", "branch": "eu_ai_act", "parent": "euaiact_root",
+     "label_es": "Riesgo Inaceptable", "label_en": "Unacceptable Risk",
+     "definition_es": "Categoría de sistemas de IA prohibidos por representar una amenaza clara a la seguridad, medios de vida o derechos fundamentales de las personas.",
+     "aliases": [], "frameworks": ["eu_ai_act"]},
+
+    {"id": "riesgo_alto", "branch": "eu_ai_act", "parent": "euaiact_root",
+     "label_es": "Sistema de IA de Alto Riesgo", "label_en": "High-Risk AI System",
+     "definition_es": "Sistema de IA sujeto a requisitos estrictos de evaluación de conformidad, gestión de riesgos, documentación técnica y supervisión humana, por su potencial impacto en salud, seguridad o derechos fundamentales.",
+     "aliases": [], "frameworks": ["eu_ai_act"]},
+
+    {"id": "riesgo_limitado", "branch": "eu_ai_act", "parent": "euaiact_root",
+     "label_es": "Riesgo Limitado", "label_en": "Limited Risk",
+     "definition_es": "Categoría de sistemas de IA sujetos principalmente a obligaciones de transparencia (ej. chatbots, deepfakes).",
+     "aliases": [], "frameworks": ["eu_ai_act"]},
+
+    {"id": "riesgo_minimo", "branch": "eu_ai_act", "parent": "euaiact_root",
+     "label_es": "Riesgo Mínimo", "label_en": "Minimal Risk",
+     "definition_es": "Categoría de sistemas de IA sin obligaciones legales específicas bajo el EU AI Act, aunque se recomienda adhesión voluntaria a códigos de conducta.",
+     "aliases": [], "frameworks": ["eu_ai_act"]},
+
+    {"id": "obligaciones_proveedor", "branch": "eu_ai_act", "parent": "riesgo_alto",
+     "label_es": "Obligaciones del Proveedor", "label_en": "Provider Obligations",
+     "definition_es": "Deberes del proveedor de un sistema de IA de alto riesgo: gestión de riesgos, calidad de datos, documentación técnica, registro y conformidad.",
+     "aliases": [], "frameworks": ["eu_ai_act"]},
+
+    {"id": "obligaciones_implementador", "branch": "eu_ai_act", "parent": "riesgo_alto",
+     "label_es": "Obligaciones del Implementador", "label_en": "Deployer Obligations",
+     "definition_es": "Deberes del implementador de un sistema de IA de alto riesgo: uso conforme a instrucciones, supervisión humana, monitoreo y notificación de incidentes.",
+     "aliases": [], "frameworks": ["eu_ai_act"]},
+
+    {"id": "evaluacion_conformidad", "branch": "eu_ai_act", "parent": "riesgo_alto",
+     "label_es": "Evaluación de Conformidad", "label_en": "Conformity Assessment",
+     "definition_es": "Proceso de verificación de que un sistema de IA de alto riesgo cumple los requisitos del EU AI Act antes de su comercialización o puesta en servicio.",
+     "aliases": [], "frameworks": ["eu_ai_act"]},
+
+    {"id": "ia_proposito_general", "branch": "eu_ai_act", "parent": "euaiact_root",
+     "label_es": "IA de Propósito General (GPAI)", "label_en": "General Purpose AI (GPAI)",
+     "definition_es": "Modelo de IA capaz de realizar una amplia gama de tareas, sujeto a obligaciones específicas de transparencia y gestión de riesgo sistémico bajo el EU AI Act.",
+     "aliases": ["GPAI"], "frameworks": ["eu_ai_act"]},
+
+    {"id": "gobernador_ia_root", "branch": "gobernanza_ia", "parent": null,
+     "label_es": "Gobernador IA - Arquitectura y Terminología", "label_en": "Gobernador IA Architecture & Terminology",
+     "definition_es": "Plataforma de gobernanza de IA de tres capas (agentes Python, motor de validación Rust, dashboard React) desarrollada por VibeCodingChile para cumplimiento regulatorio chileno (Ley 21.719, ISO/IEC 42001, EU AI Act).",
+     "aliases": ["Gobernador IA"], "frameworks": ["gobernanza_ia"]},
+
+    {"id": "norma", "branch": "gobernanza_ia", "parent": "gobernador_ia_root",
+     "label_es": "NORMA", "label_en": "NORMA",
+     "definition_es": "Agente de cumplimiento de Gobernador IA, encargado de interpretar requisitos normativos y generar manifiestos de cumplimiento estructurados (Seed Code).",
+     "aliases": [], "frameworks": ["gobernanza_ia"]},
+
+    {"id": "openfang", "branch": "gobernanza_ia", "parent": "gobernador_ia_root",
+     "label_es": "OpenFang / Enjambre Vibe", "label_en": "OpenFang / Enjambre Vibe",
+     "definition_es": "Capa de orquestación en Python de Gobernador IA que coordina los agentes de cumplimiento (Enjambre Vibe) que interactúan con el motor de validación CheckWizard.",
+     "aliases": ["Enjambre Vibe"], "frameworks": ["gobernanza_ia"]},
+
+    {"id": "checkwizard", "branch": "gobernanza_ia", "parent": "gobernador_ia_root",
+     "label_es": "CheckWizard", "label_en": "CheckWizard",
+     "definition_es": "Motor de validación en Rust de Gobernador IA que actúa como libro mayor (ledger) de verificación de cumplimiento normativo, implementando el patrón Doer-Verifier.",
+     "aliases": [], "frameworks": ["gobernanza_ia"]},
+
+    {"id": "hitl", "branch": "gobernanza_ia", "parent": "gobernador_ia_root",
+     "label_es": "Human-in-the-Loop (HITL)", "label_en": "Human-in-the-Loop",
+     "definition_es": "Punto de control donde una persona humana revisa, aprueba o interviene en una decisión generada por un agente de IA antes de su ejecución final.",
+     "aliases": ["HITL"], "frameworks": ["gobernanza_ia", "iso_42001", "eu_ai_act"]},
+
+    {"id": "trust_score", "branch": "gobernanza_ia", "parent": "gobernador_ia_root",
+     "label_es": "Trust Score", "label_en": "Trust Score",
+     "definition_es": "Métrica agregada de confianza calculada por Gobernador IA para evaluar el nivel de cumplimiento y riesgo de un sistema o proceso auditado.",
+     "aliases": [], "frameworks": ["gobernanza_ia"]},
+
+    {"id": "patron_doer_verifier", "branch": "gobernanza_ia", "parent": "gobernador_ia_root",
+     "label_es": "Patrón Doer-Verifier", "label_en": "Doer-Verifier Pattern",
+     "definition_es": "Patrón de arquitectura de agentes donde un agente ejecutor (Doer) propone una acción y un agente verificador independiente (Verifier) la valida antes de su aplicación, reduciendo el riesgo de error o alucinación.",
+     "aliases": [], "frameworks": ["gobernanza_ia"]},
+
+    {"id": "seed_code", "branch": "gobernanza_ia", "parent": "norma",
+     "label_es": "Seed Code (Manifiesto TOML)", "label_en": "Seed Code TOML Manifest",
+     "definition_es": "Manifiesto estructurado en formato TOML generado por NORMA que codifica los requisitos de cumplimiento aplicables a un proyecto o sistema.",
+     "aliases": [], "frameworks": ["gobernanza_ia"]},
+
+    {"id": "cerebro_normativo_chile", "branch": "gobernanza_ia", "parent": "gobernador_ia_root",
+     "label_es": "Cerebro Normativo Chile", "label_en": "Cerebro Normativo Chile",
+     "definition_es": "Visualización 3D holográfica (Three.js + UnrealBloom) que mapea los marcos regulatorios chilenos relevantes, con nodos vinculados a la Biblioteca del Congreso Nacional (BCN) y trazabilidad cruzada entre normas.",
+     "aliases": [], "frameworks": ["gobernanza_ia"]},
+
+    {"id": "accountability_inverso", "branch": "gobernanza_ia", "parent": "gobernador_ia_root",
+     "label_es": "Accountability Inverso", "label_en": "Reverse Accountability",
+     "definition_es": "Marco doctrinal desarrollado para Gobernador IA que invierte la carga de la prueba de cumplimiento: en vez de que el regulador deba probar el incumplimiento, el sistema de IA debe poder demostrar activa y continuamente su propio cumplimiento mediante trazabilidad verificable (CheckWizard).",
+     "aliases": [], "frameworks": ["gobernanza_ia", "ley_21719"]}
+  ]
+}

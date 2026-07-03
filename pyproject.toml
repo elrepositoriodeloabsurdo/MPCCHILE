@@ -1,0 +1,28 @@
+[project]
+name = "vibecodingchile-mcp"
+version = "0.1.0"
+description = "Servidor MCP con la ontología de cumplimiento de VibeCodingChile: Ley N°21.719, ISO/IEC 42001, EU AI Act y terminología propia de Gobernador IA."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "CC BY 4.0"}
+authors = [
+    {name = "VibeCodingChile", email = "vibecodingchile.dev@vibecodingchile.cl"}
+]
+keywords = ["mcp", "model-context-protocol", "compliance", "ley-21719", "iso-42001", "eu-ai-act", "chile"]
+dependencies = [
+    "mcp[cli]>=1.2.0",
+    "pydantic>=2.0.0",
+]
+
+[project.scripts]
+vibecodingchile-mcp = "vibecodingchile_mcp.server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["vibecodingchile_mcp"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"vibecodingchile_mcp/ontology.json" = "vibecodingchile_mcp/ontology.json"
