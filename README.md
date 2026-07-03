@@ -5,8 +5,7 @@ VibeCodingChile** —Ley N°21.719, ISO/IEC 42001, EU AI Act y la terminología 
 de Gobernador IA (NORMA, CheckWizard, OpenFang, Trust Score, etc.)— directamente a
 agentes de IA como Claude Code, Gemini CLI y OpenAI Codex.
 
-Inspirado en el patrón del [servidor FOLIO MCP](https://openlegalstandard.org/folio-mcp-server-ai-agents/),
-pero con foco 100% en cumplimiento normativo chileno de IA y protección de datos.
+I con foco 100% en cumplimiento normativo chileno de IA y protección de datos.
 
 ## Quick start
 
