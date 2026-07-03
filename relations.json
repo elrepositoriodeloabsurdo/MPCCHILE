@@ -73,6 +73,26 @@
     {"from": "gobernador_ia_root", "to": "actor_cadena_responsabilidad", "type": "implementa",
      "note": "Gobernador IA implementa el enfoque de cadena de responsabilidad de actores como eje de su arquitectura de cumplimiento."},
     {"from": "accountability_inverso", "to": "base_licitud", "type": "reconfigura",
-     "note": "El accountability inverso reconfigura la carga probatoria: el sistema debe demostrar activamente su base de licitud, no esperar a que se cuestione."}
+     "note": "El accountability inverso reconfigura la carga probatoria: el sistema debe demostrar activamente su base de licitud, no esperar a que se cuestione."},
+    {"from": "fraude_informatico", "to": "gobernanza_ia", "type": "regula",
+     "note": "La Ley 21.459 establece límites y obligaciones sobre la gobernanza de IA en contextos de fraude informático."},
+    {"from": "acceso_ilicito", "to": "openfang", "type": "requiere",
+     "note": "La prevención de acceso ilícito (Ley 21.459) requiere mecanismos de orquestación y validación del Enjambre Vibe."},
+    {"from": "falsificacion_informatica", "to": "riesgo_alto", "type": "equivale_a",
+     "note": "La falsificación informática (Ley 21.459) se equipara a un sistema de IA de alto riesgo bajo el EU AI Act."},
+    {"from": "checkwizard", "to": "fraude_informatico", "type": "supervisa",
+     "note": "CheckWizard supervisa y valida el cumplimiento normativo respecto a fraude informático."},
+    {"from": "preservacion_provisoria_datos", "to": "brecha_seguridad", "type": "referencia_cruzada",
+     "note": "La preservación provisoria de datos (Ley 21.459) y las brechas de seguridad cubren obligaciones equivalentes de protección."},
+    {"from": "ley_21663_root", "to": "gobernanza_ia", "type": "regula",
+     "note": "La Ley 21.663 (Marco de Ciberseguridad) establece el contexto regulatorio para la gobernanza de IA en Chile."},
+    {"from": "operador_importancia_vital", "to": "checkwizard", "type": "requiere",
+     "note": "Los OIV (Ley 21.663) requieren validación continua por CheckWizard para cumplimiento de ciberseguridad."},
+    {"from": "servicio_esencial", "to": "riesgo_alto", "type": "equivale_a",
+     "note": "Un servicio esencial (Ley 21.663) típicamente corresponde a un sistema de IA de alto riesgo bajo clasificación del EU AI Act."},
+    {"from": "reporte_incidentes_ciber", "to": "brecha_seguridad", "type": "referencia_cruzada",
+     "note": "La obligación de reportar incidentes de ciberseguridad (Ley 21.663) se alinea con la notificación de brechas de datos."},
+    {"from": "anci", "to": "operador_importancia_vital", "type": "supervisa",
+     "note": "La ANCI supervisa el cumplimiento de obligaciones de ciberseguridad por parte de los OIV."}
   ]
 }
