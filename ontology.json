@@ -15,7 +15,7 @@
   "concepts": [
     {"id": "proteccion_datos_root", "branch": "ley_21719", "parent": null,
      "label_es": "Protección de Datos Personales", "label_en": "Personal Data Protection",
-     "definition_es": "Marco jurídico chileno (Ley N°21.719) que regula el tratamiento de datos personales, estableciendo bases de licitud, derechos ARCO, obligaciones de responsables y encargados de tratamiento, y la institucionalidad fiscalizadora (APDP).",
+     "definition_es": "Marco jurídico chileno (Ley N°21.719) que regula el tratamiento de datos personales, estableciendo bases de licitud, derechos ARCO, obligaciones de responsables y encargados, y competencias de fiscalización a la Agencia de Protección de Datos Personales.",
      "aliases": ["Ley 21.719", "LPDP Chile"], "frameworks": ["ley_21719"]},
 
     {"id": "dato_personal", "branch": "ley_21719", "parent": "proteccion_datos_root",
@@ -45,7 +45,7 @@
 
     {"id": "base_licitud", "branch": "ley_21719", "parent": "proteccion_datos_root",
      "label_es": "Base de Licitud", "label_en": "Legal Basis for Processing",
-     "definition_es": "Fundamento jurídico que habilita el tratamiento de datos personales (consentimiento, ejecución de contrato, obligación legal, interés legítimo, misión de interés público, entre otras).",
+     "definition_es": "Fundamento jurídico que habilita el tratamiento de datos personales (consentimiento, ejecución de contrato, obligación legal, interés legítimo, misión de interés público, etc.).",
      "aliases": ["Base de Legitimación"], "frameworks": ["ley_21719"]},
 
     {"id": "consentimiento", "branch": "ley_21719", "parent": "base_licitud",
@@ -100,7 +100,7 @@
 
     {"id": "eipd", "branch": "ley_21719", "parent": "proteccion_datos_root",
      "label_es": "Evaluación de Impacto en la Protección de Datos (EIPD)", "label_en": "Data Protection Impact Assessment (DPIA)",
-     "definition_es": "Análisis previo obligatorio cuando el tratamiento entraña alto riesgo para los derechos de los titulares, exigido por la Ley 21.719 para tratamientos de alto riesgo (incluye sistemas de IA con impacto significativo).",
+     "definition_es": "Análisis previo obligatorio cuando el tratamiento entraña alto riesgo para los derechos de los titulares, exigido por la Ley 21.719 para tratamientos de alto riesgo (incluyendo uso de IA).",
      "aliases": ["DPIA"], "frameworks": ["ley_21719"]},
 
     {"id": "dpa", "branch": "ley_21719", "parent": "proteccion_datos_root",
@@ -130,7 +130,7 @@
 
     {"id": "actor_cadena_responsabilidad", "branch": "ley_21719", "parent": "proteccion_datos_root",
      "label_es": "Cadena de Responsabilidad de Actores (IMDA)", "label_en": "Actor Chain of Responsibility",
-     "definition_es": "Marco de trazabilidad que identifica y distribuye responsabilidad entre los distintos actores (proveedor, implementador, distribuidor, usuario) que intervienen en el ciclo de vida de un sistema de IA que trata datos personales, integrando el enfoque IMDA (Infocomm Media Development Authority) de cadena de responsabilidad.",
+     "definition_es": "Marco de trazabilidad que identifica y distribuye responsabilidad entre los distintos actores (proveedor, implementador, distribuidor, usuario) que intervienen en el ciclo de vida de un sistema de IA, bajo supervisión de la APDP.",
      "aliases": ["IMDA Chain of Responsibility"], "frameworks": ["ley_21719", "gobernanza_ia"]},
 
     {"id": "iso42001_root", "branch": "iso_42001", "parent": null,
@@ -185,7 +185,7 @@
 
     {"id": "riesgo_alto", "branch": "eu_ai_act", "parent": "euaiact_root",
      "label_es": "Sistema de IA de Alto Riesgo", "label_en": "High-Risk AI System",
-     "definition_es": "Sistema de IA sujeto a requisitos estrictos de evaluación de conformidad, gestión de riesgos, documentación técnica y supervisión humana, por su potencial impacto en salud, seguridad o derechos fundamentales.",
+     "definition_es": "Sistema de IA sujeto a requisitos estrictos de evaluación de conformidad, gestión de riesgos, documentación técnica y supervisión humana, por su potencial impacto en seguridad o derechos fundamentales.",
      "aliases": [], "frameworks": ["eu_ai_act"]},
 
     {"id": "riesgo_limitado", "branch": "eu_ai_act", "parent": "euaiact_root",
@@ -220,7 +220,7 @@
 
     {"id": "gobernador_ia_root", "branch": "gobernanza_ia", "parent": null,
      "label_es": "Gobernador IA - Arquitectura y Terminología", "label_en": "Gobernador IA Architecture & Terminology",
-     "definition_es": "Plataforma de gobernanza de IA de tres capas (agentes Python, motor de validación Rust, dashboard React) desarrollada por VibeCodingChile para cumplimiento regulatorio chileno (Ley 21.719, ISO/IEC 42001, EU AI Act).",
+     "definition_es": "Plataforma de gobernanza de IA de tres capas (agentes Python, motor de validación Rust, dashboard React) desarrollada por VibeCodingChile para cumplimiento regulatorio chileno e internacional.",
      "aliases": ["Gobernador IA"], "frameworks": ["gobernanza_ia"]},
 
     {"id": "norma", "branch": "gobernanza_ia", "parent": "gobernador_ia_root",
@@ -250,7 +250,7 @@
 
     {"id": "patron_doer_verifier", "branch": "gobernanza_ia", "parent": "gobernador_ia_root",
      "label_es": "Patrón Doer-Verifier", "label_en": "Doer-Verifier Pattern",
-     "definition_es": "Patrón de arquitectura de agentes donde un agente ejecutor (Doer) propone una acción y un agente verificador independiente (Verifier) la valida antes de su aplicación, reduciendo el riesgo de error o alucinación.",
+     "definition_es": "Patrón de arquitectura de agentes donde un agente ejecutor (Doer) propone una acción y un agente verificador independiente (Verifier) la valida antes de su aplicación, respaldado por CheckWizard.",
      "aliases": [], "frameworks": ["gobernanza_ia"]},
 
     {"id": "seed_code", "branch": "gobernanza_ia", "parent": "norma",
@@ -260,12 +260,12 @@
 
     {"id": "cerebro_normativo_chile", "branch": "gobernanza_ia", "parent": "gobernador_ia_root",
      "label_es": "Cerebro Normativo Chile", "label_en": "Cerebro Normativo Chile",
-     "definition_es": "Visualización 3D holográfica (Three.js + UnrealBloom) que mapea los marcos regulatorios chilenos relevantes, con nodos vinculados a la Biblioteca del Congreso Nacional (BCN) y trazabilidad cruzada entre normas.",
+     "definition_es": "Visualización 3D holográfica (Three.js + UnrealBloom) que mapea los marcos regulatorios chilenos relevantes, con nodos vinculados a la Biblioteca del Congreso Nacional (BCN).",
      "aliases": [], "frameworks": ["gobernanza_ia"]},
 
     {"id": "accountability_inverso", "branch": "gobernanza_ia", "parent": "gobernador_ia_root",
      "label_es": "Accountability Inverso", "label_en": "Reverse Accountability",
-     "definition_es": "Marco doctrinal desarrollado para Gobernador IA que invierte la carga de la prueba de cumplimiento: en vez de que el regulador deba probar el incumplimiento, el sistema de IA debe poder demostrar activa y continuamente su propio cumplimiento mediante trazabilidad verificable (CheckWizard).",
+     "definition_es": "Marco doctrinal desarrollado para Gobernador IA que invierte la carga de la prueba de cumplimiento: en vez de que el regulador deba probar el incumplimiento, el sistema debe demostrar activamente su adherencia normativa.",
      "aliases": [], "frameworks": ["gobernanza_ia", "ley_21719"]}
   ]
 }
