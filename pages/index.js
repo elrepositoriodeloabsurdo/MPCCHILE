@@ -42,10 +42,80 @@ export default function Home() {
     }
   };
 
+  // SVG Icons
+  const JusticeIcon = () => (
+    <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Scale of Justice */}
+      <circle cx="50" cy="15" r="5" fill="#007bff" stroke="#007bff" strokeWidth="2"/>
+      <line x1="50" y1="20" x2="50" y2="35" stroke="#007bff" strokeWidth="2"/>
+      <line x1="30" y1="35" x2="70" y2="35" stroke="#007bff" strokeWidth="2"/>
+      {/* Left pan */}
+      <rect x="15" y="35" width="25" height="8" fill="#007bff" stroke="#007bff" strokeWidth="2" rx="2"/>
+      <line x1="27.5" y1="20" x2="27.5" y2="35" stroke="#007bff" strokeWidth="1.5"/>
+      {/* Right pan */}
+      <rect x="60" y="35" width="25" height="8" fill="#007bff" stroke="#007bff" strokeWidth="2" rx="2"/>
+      <line x1="72.5" y1="20" x2="72.5" y2="35" stroke="#007bff" strokeWidth="1.5"/>
+      {/* Sword/Authority */}
+      <line x1="50" y1="50" x2="50" y2="90" stroke="#764ba2" strokeWidth="3"/>
+      <rect x="45" y="45" width="10" height="8" fill="#764ba2" rx="1"/>
+      {/* Base */}
+      <rect x="40" y="90" width="20" height="5" fill="#764ba2" rx="1"/>
+    </svg>
+  );
+
+  const LogoIcon = () => (
+    <svg width="60" height="60" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Retro computer monitor */}
+      <rect x="30" y="20" width="140" height="110" fill="none" stroke="#333" strokeWidth="3" rx="8"/>
+      <rect x="35" y="25" width="130" height="100" fill="#f0f0f0" rx="4"/>
+      {/* Screen face */}
+      <circle cx="80" cy="60" r="8" fill="#333"/>
+      <circle cx="120" cy="60" r="8" fill="#333"/>
+      <path d="M 80 80 Q 100 95 120 80" stroke="#333" strokeWidth="2" fill="none" strokeLinecap="round"/>
+      {/* Chip */}
+      <rect x="110" y="45" width="35" height="35" fill="none" stroke="#764ba2" strokeWidth="2" rx="4"/>
+      <circle cx="120" cy="55" r="2" fill="#764ba2"/>
+      <circle cx="135" cy="55" r="2" fill="#764ba2"/>
+      <circle cx="120" cy="70" r="2" fill="#764ba2"/>
+      <circle cx="135" cy="70" r="2" fill="#764ba2"/>
+      <line x1="125" y1="48" x2="125" y2="42" stroke="#764ba2" strokeWidth="1.5"/>
+      <line x1="140" y1="48" x2="140" y2="42" stroke="#764ba2" strokeWidth="1.5"/>
+      {/* Base */}
+      <rect x="60" y="130" width="80" height="8" fill="#333" rx="2"/>
+      <line x1="65" y1="138" x2="75" y2="155" stroke="#333" strokeWidth="2"/>
+      <line x1="135" y1="138" x2="125" y2="155" stroke="#333" strokeWidth="2"/>
+      {/* Pencil */}
+      <g transform="translate(-30, -20)">
+        <line x1="60" y1="80" x2="100" y2="40" stroke="#764ba2" strokeWidth="4" strokeLinecap="round"/>
+        <polygon points="100,40 108,35 104,48" fill="#764ba2"/>
+      </g>
+    </svg>
+  );
+
+  const StatsIcon = () => (
+    <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="20" y="60" width="15" height="35" fill="white" stroke="white" strokeWidth="2" rx="2"/>
+      <rect x="42" y="40" width="15" height="55" fill="white" stroke="white" strokeWidth="2" rx="2"/>
+      <rect x="64" y="20" width="15" height="75" fill="white" stroke="white" strokeWidth="2" rx="2"/>
+    </svg>
+  );
+
+  const SearchIcon = () => (
+    <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="40" cy="40" r="25" fill="none" stroke="white" strokeWidth="3"/>
+      <line x1="60" y1="60" x2="80" y2="80" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+    </svg>
+  );
+
   return (
     <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem', fontFamily: 'system-ui, sans-serif' }}>
       <header style={{ marginBottom: '2rem', textAlign: 'center', borderBottom: '3px solid #007bff', paddingBottom: '1rem' }}>
-        <h1 style={{ margin: '0 0 0.5rem 0', color: '#333' }}>🎯 VibeCodingChile MCP Ontology</h1>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginBottom: '1rem' }}>
+          <JusticeIcon />
+          <LogoIcon />
+          <JusticeIcon />
+        </div>
+        <h1 style={{ margin: '0 0 0.5rem 0', color: '#333' }}>VibeCodingChile MCP Ontology</h1>
         <p style={{ margin: '0', color: '#666', fontSize: '1.1em' }}>
           Ley N°21.719 | ISO/IEC 42001 | EU AI Act | Gobernanza IA
         </p>
@@ -53,7 +123,10 @@ export default function Home() {
 
       {stats && (
         <section style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white', padding: '2rem', borderRadius: '8px', marginBottom: '2rem', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}>
-          <h2 style={{ margin: '0 0 1rem 0' }}>📊 Estadísticas</h2>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
+            <StatsIcon />
+            <h2 style={{ margin: '0' }}>Estadísticas</h2>
+          </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
             <div>
               <div style={{ fontSize: '2em', fontWeight: 'bold' }}>{stats.total_concepts}</div>
@@ -73,7 +146,10 @@ export default function Home() {
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
         <section>
-          <h2>🔍 Buscar</h2>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
+            <SearchIcon />
+            <h2 style={{ margin: '0' }}>Buscar</h2>
+          </div>
           <form onSubmit={handleSearch} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '1rem' }}>
             <input
               type="text"
@@ -96,7 +172,7 @@ export default function Home() {
               cursor: loading ? 'default' : 'pointer',
               fontWeight: 'bold'
             }}>
-              {loading ? '⏳ Buscando...' : '🚀 Buscar'}
+              {loading ? 'Buscando...' : 'Buscar'}
             </button>
           </form>
 
@@ -128,7 +204,7 @@ export default function Home() {
         </section>
 
         <section>
-          <h2>📋 Detalle</h2>
+          <h2>Detalle</h2>
           {selectedConcept ? (
             <div style={{
               padding: '1.5rem',
@@ -146,14 +222,14 @@ export default function Home() {
             </div>
           ) : (
             <div style={{ padding: '2rem', background: '#f9f9f9', borderRadius: '8px', textAlign: 'center', color: '#999' }}>
-              👈 Selecciona un concepto
+              ← Selecciona un concepto
             </div>
           )}
         </section>
       </div>
 
       <footer style={{ marginTop: '3rem', paddingTop: '1.5rem', borderTop: '1px solid #ddd', fontSize: '0.85em', color: '#666' }}>
-        <h3>📡 API Endpoints</h3>
+        <h3>API Endpoints</h3>
         <ul style={{ fontSize: '0.8em' }}>
           <li><code>/api/search?q=término</code> - Buscar</li>
           <li><code>/api/concept?id=id</code> - Detalle</li>
