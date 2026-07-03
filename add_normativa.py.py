@@ -1,18 +1,20 @@
 import json
 
 def agregar_a_ontologia(nuevos_nodos, nuevas_relaciones):
-    # 1. Cargar Ontología
+    # 1. Cargar Ontología (manejando archivos vacíos)
     try:
         with open("ontology.json", "r", encoding="utf-8") as f:
-            ontology = json.load(f)
-    except FileNotFoundError:
+            content = f.read().strip()
+            ontology = json.loads(content) if content else []
+    except (FileNotFoundError, json.JSONDecodeError):
         ontology = []
 
-    # 2. Cargar Relaciones
+    # 2. Cargar Relaciones (manejando archivos vacíos)
     try:
         with open("relations.json", "r", encoding="utf-8") as f:
-            relations = json.load(f)
-    except FileNotFoundError:
+            content = f.read().strip()
+            relations = json.loads(content) if content else []
+    except (FileNotFoundError, json.JSONDecodeError):
         relations = []
 
     # Evitar duplicados por ID e inyectar nodos
@@ -28,7 +30,7 @@ def agregar_a_ontologia(nuevos_nodos, nuevas_relaciones):
             relations.append(rel)
             print(f"✔ Relación agregada: {rel['source']} --({rel['property']})--> {rel['target']}")
 
-    # 3. Guardar con formato limpio
+    # 3. Guardar con formato limpio y estructurado
     with open("ontology.json", "w", encoding="utf-8") as f:
         json.dump(ontology, f, indent=2, ensure_ascii=False)
         
@@ -37,7 +39,7 @@ def agregar_a_ontologia(nuevos_nodos, nuevas_relaciones):
 
     print("\n¡Base normativa actualizada con éxito!")
 
-# --- COPIA Y PEGA LO QUE TE DI AQUÍ ---
+# Datos de la rama delitos_informaticos
 nodos_delitos = [
   {"id": "ley_21459", "name": "Ley N° 21.459 (Delitos Informáticos)", "branch": "delitos_informaticos", "definition": "Normativa chilena que adecua la legislación al Convenio de Budapest, tipificando delitos informáticos y estableciendo la responsabilidad penal de las personas jurídicas.", "risk_tier": "alto"},
   {"id": "acceso_ilicito", "name": "Acceso Ilícito (Art. 2)", "branch": "delitos_informaticos", "definition": "Acceder a un sistema informático sin autorización o excediendo la poseída, superando barreras técnicas o medidas tecnológicas de seguridad.", "risk_tier": "alto"},
