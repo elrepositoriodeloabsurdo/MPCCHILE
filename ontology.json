@@ -3,11 +3,13 @@
     "name": "VibeCodingChile Compliance Ontology",
     "version": "0.1.0",
     "source": "Extraída de Gobernador IA / CheckWizard + conceptos construidos para cobertura completa",
-    "frameworks": ["ley_21719", "iso_42001", "eu_ai_act", "gobernanza_ia"],
+    "frameworks": ["ley_21719", "ley_21459", "ley_21663", "iso_42001", "eu_ai_act", "gobernanza_ia"],
     "languages": ["es", "en"]
   },
   "branches": [
     {"id": "ley_21719", "label_es": "Ley N°21.719 - Protección de Datos Personales (Chile)", "label_en": "Chilean Personal Data Protection Law"},
+    {"id": "delitos_informaticos", "label_es": "Ley N° 21.459 - Delitos Informáticos (Chile)", "label_en": "Chilean Cybercrime Law"},
+    {"id": "ciberseguridad_cl", "label_es": "Ley N° 21.663 - Ley Marco de Ciberseguridad (Chile)", "label_en": "Chilean Cybersecurity Framework Law"},
     {"id": "iso_42001", "label_es": "ISO/IEC 42001 - Sistema de Gestión de IA", "label_en": "AI Management System"},
     {"id": "eu_ai_act", "label_es": "EU AI Act - Marco de Riesgo", "label_en": "EU AI Act Risk Framework"},
     {"id": "gobernanza_ia", "label_es": "Gobernador IA - Arquitectura y Terminología Propia", "label_en": "Gobernador IA Architecture & Proprietary Terms"}
@@ -15,7 +17,7 @@
   "concepts": [
     {"id": "proteccion_datos_root", "branch": "ley_21719", "parent": null,
      "label_es": "Protección de Datos Personales", "label_en": "Personal Data Protection",
-     "definition_es": "Marco jurídico chileno (Ley N°21.719) que regula el tratamiento de datos personales, estableciendo bases de licitud, derechos ARCO, obligaciones de responsables y encargados, y competencias de fiscalización a la Agencia de Protección de Datos Personales.",
+     "definition_es": "Marco jurídico chileno (Ley N°21.719) que regula el tratamiento de datos personales, estableciendo bases de licitud, derechos ARCO, obligaciones de responsables y encargados.",
      "aliases": ["Ley 21.719", "LPDP Chile"], "frameworks": ["ley_21719"]},
 
     {"id": "dato_personal", "branch": "ley_21719", "parent": "proteccion_datos_root",
@@ -45,7 +47,7 @@
 
     {"id": "base_licitud", "branch": "ley_21719", "parent": "proteccion_datos_root",
      "label_es": "Base de Licitud", "label_en": "Legal Basis for Processing",
-     "definition_es": "Fundamento jurídico que habilita el tratamiento de datos personales (consentimiento, ejecución de contrato, obligación legal, interés legítimo, misión de interés público, etc.).",
+     "definition_es": "Fundamento jurídico que habilita el tratamiento de datos personales (consentimiento, ejecución de contrato, obligación legal, interés legítimo, misión de interés público).",
      "aliases": ["Base de Legitimación"], "frameworks": ["ley_21719"]},
 
     {"id": "consentimiento", "branch": "ley_21719", "parent": "base_licitud",
@@ -100,7 +102,7 @@
 
     {"id": "eipd", "branch": "ley_21719", "parent": "proteccion_datos_root",
      "label_es": "Evaluación de Impacto en la Protección de Datos (EIPD)", "label_en": "Data Protection Impact Assessment (DPIA)",
-     "definition_es": "Análisis previo obligatorio cuando el tratamiento entraña alto riesgo para los derechos de los titulares, exigido por la Ley 21.719 para tratamientos de alto riesgo (incluyendo uso de IA).",
+     "definition_es": "Análisis previo obligatorio cuando el tratamiento entraña alto riesgo para los derechos de los titulares, exigido por la Ley 21.719 para tratamientos de alto riesgo.",
      "aliases": ["DPIA"], "frameworks": ["ley_21719"]},
 
     {"id": "dpa", "branch": "ley_21719", "parent": "proteccion_datos_root",
@@ -130,8 +132,58 @@
 
     {"id": "actor_cadena_responsabilidad", "branch": "ley_21719", "parent": "proteccion_datos_root",
      "label_es": "Cadena de Responsabilidad de Actores (IMDA)", "label_en": "Actor Chain of Responsibility",
-     "definition_es": "Marco de trazabilidad que identifica y distribuye responsabilidad entre los distintos actores (proveedor, implementador, distribuidor, usuario) que intervienen en el ciclo de vida de un sistema de IA, bajo supervisión de la APDP.",
+     "definition_es": "Marco de trazabilidad que identifica y distribuye responsabilidad entre los distintos actores (proveedor, implementador, distribuidor, usuario) que intervienen en el ciclo de vida.",
      "aliases": ["IMDA Chain of Responsibility"], "frameworks": ["ley_21719", "gobernanza_ia"]},
+
+    {"id": "ley_21459_root", "branch": "delitos_informaticos", "parent": null,
+     "label_es": "Ley N° 21.459 - Delitos Informáticos", "label_en": "Chilean Cybercrime Law",
+     "definition_es": "Normativa chilena que adecua la legislación al Convenio de Budapest, tipificando delitos informáticos y estableciendo la responsabilidad penal de las personas jurídicas.",
+     "aliases": ["Ley 21.459"], "frameworks": ["delitos_informaticos"]},
+
+    {"id": "acceso_ilicito", "branch": "delitos_informaticos", "parent": "ley_21459_root",
+     "label_es": "Acceso Ilícito (Art. 2)", "label_en": "Unauthorized Access",
+     "definition_es": "Acceder a un sistema informático sin autorización o excediendo la poseída, superando barreras técnicas o medidas tecnológicas de seguridad.",
+     "aliases": [], "frameworks": ["delitos_informaticos"], "risk_tier": "alto"},
+
+    {"id": "falsificacion_informatica", "branch": "delitos_informaticos", "parent": "ley_21459_root",
+     "label_es": "Falsificación Informática (Art. 5)", "label_en": "Digital Forgery",
+     "definition_es": "Introducción, alteración, daño o supresión indebida de datos informáticos con la intención de que sean tomados como auténticos.",
+     "aliases": [], "frameworks": ["delitos_informaticos"], "risk_tier": "alto"},
+
+    {"id": "fraude_informatico", "branch": "delitos_informaticos", "parent": "ley_21459_root",
+     "label_es": "Fraude Informático (Art. 7)", "label_en": "Digital Fraud",
+     "definition_es": "Manipulación de un sistema informático mediante introducción, alteración o supresión de datos para obtener un beneficio económico causando perjuicio a otro.",
+     "aliases": [], "frameworks": ["delitos_informaticos"], "risk_tier": "alto"},
+
+    {"id": "preservacion_provisoria_datos", "branch": "delitos_informaticos", "parent": "ley_21459_root",
+     "label_es": "Preservación Provisoria de Datos (Art. 18 / Bis 218)", "label_en": "Temporary Data Preservation",
+     "definition_es": "Obligación impuesta a proveedores de servicios de conservar o proteger datos informáticos concretos por un periodo de hasta 90 días (prorrogable a 180) a requerimiento del Ministerio Público.",
+     "aliases": [], "frameworks": ["delitos_informaticos"], "risk_tier": "limitado"},
+
+    {"id": "ley_21663_root", "branch": "ciberseguridad_cl", "parent": null,
+     "label_es": "Ley N° 21.663 - Ley Marco de Ciberseguridad", "label_en": "Chilean Cybersecurity Framework Law",
+     "definition_es": "Normativa chilena que establece la institucionalidad de ciberseguridad, deberes de seguridad y notificación de incidentes para regular la resiliencia digital del país.",
+     "aliases": ["Ley 21.663"], "frameworks": ["ciberseguridad_cl"]},
+
+    {"id": "anci", "branch": "ciberseguridad_cl", "parent": "ley_21663_root",
+     "label_es": "Agencia Nacional de Ciberseguridad (ANCI)", "label_en": "National Cybersecurity Agency",
+     "definition_es": "Autoridad técnica de ciberseguridad en Chile encargada de dictar normas, fiscalizar el cumplimiento e imponer sanciones bajo la Ley 21.663.",
+     "aliases": [], "frameworks": ["ciberseguridad_cl"]},
+
+    {"id": "servicio_esencial", "branch": "ciberseguridad_cl", "parent": "ley_21663_root",
+     "label_es": "Servicio Esencial (SE)", "label_en": "Essential Service",
+     "definition_es": "Servicios provistos por organismos del Estado e instituciones privadas cuya interrupción puede causar grave daño a la vida, salud o seguridad de la población.",
+     "aliases": [], "frameworks": ["ciberseguridad_cl"]},
+
+    {"id": "operador_importancia_vital", "branch": "ciberseguridad_cl", "parent": "ley_21663_root",
+     "label_es": "Operador de Importancia Vital (OIV)", "label_en": "Vital Importance Operator",
+     "definition_es": "Instituciones calificadas por la ANCI que proveen servicios esenciales y dependen críticamente de las tecnologías de información para su operación.",
+     "aliases": [], "frameworks": ["ciberseguridad_cl"]},
+
+    {"id": "reporte_incidentes_ciber", "branch": "ciberseguridad_cl", "parent": "ley_21663_root",
+     "label_es": "Obligación de Reportar Incidentes (Art. 8)", "label_en": "Mandatory Incident Reporting",
+     "definition_es": "Deber legal de los OIV y SE de notificar a la ANCI todo incidente de ciberseguridad que pueda tener efectos significativos de manera inmediata (plazo máximo de 3 horas).",
+     "aliases": [], "frameworks": ["ciberseguridad_cl"], "risk_tier": "alto"},
 
     {"id": "iso42001_root", "branch": "iso_42001", "parent": null,
      "label_es": "Sistema de Gestión de IA (SGIA)", "label_en": "AI Management System (AIMS)",
@@ -185,7 +237,7 @@
 
     {"id": "riesgo_alto", "branch": "eu_ai_act", "parent": "euaiact_root",
      "label_es": "Sistema de IA de Alto Riesgo", "label_en": "High-Risk AI System",
-     "definition_es": "Sistema de IA sujeto a requisitos estrictos de evaluación de conformidad, gestión de riesgos, documentación técnica y supervisión humana, por su potencial impacto en seguridad o derechos fundamentales.",
+     "definition_es": "Sistema de IA sujeto a requisitos estrictos de evaluación de conformidad, gestión de riesgos, documentación técnica y supervisión humana, por su potencial impacto en seguridad y derechos fundamentales.",
      "aliases": [], "frameworks": ["eu_ai_act"]},
 
     {"id": "riesgo_limitado", "branch": "eu_ai_act", "parent": "euaiact_root",
@@ -220,7 +272,7 @@
 
     {"id": "gobernador_ia_root", "branch": "gobernanza_ia", "parent": null,
      "label_es": "Gobernador IA - Arquitectura y Terminología", "label_en": "Gobernador IA Architecture & Terminology",
-     "definition_es": "Plataforma de gobernanza de IA de tres capas (agentes Python, motor de validación Rust, dashboard React) desarrollada por VibeCodingChile para cumplimiento regulatorio chileno e internacional.",
+     "definition_es": "Plataforma de gobernanza de IA de tres capas (agentes Python, motor de validación Rust, dashboard React) desarrollada por VibeCodingChile para cumplimiento regulatorio chileno.",
      "aliases": ["Gobernador IA"], "frameworks": ["gobernanza_ia"]},
 
     {"id": "norma", "branch": "gobernanza_ia", "parent": "gobernador_ia_root",
@@ -250,7 +302,7 @@
 
     {"id": "patron_doer_verifier", "branch": "gobernanza_ia", "parent": "gobernador_ia_root",
      "label_es": "Patrón Doer-Verifier", "label_en": "Doer-Verifier Pattern",
-     "definition_es": "Patrón de arquitectura de agentes donde un agente ejecutor (Doer) propone una acción y un agente verificador independiente (Verifier) la valida antes de su aplicación, respaldado por CheckWizard.",
+     "definition_es": "Patrón de arquitectura de agentes donde un agente ejecutor (Doer) propone una acción y un agente verificador independiente (Verifier) la valida antes de su aplicación, reduciendo riesgos.",
      "aliases": [], "frameworks": ["gobernanza_ia"]},
 
     {"id": "seed_code", "branch": "gobernanza_ia", "parent": "norma",
@@ -265,7 +317,7 @@
 
     {"id": "accountability_inverso", "branch": "gobernanza_ia", "parent": "gobernador_ia_root",
      "label_es": "Accountability Inverso", "label_en": "Reverse Accountability",
-     "definition_es": "Marco doctrinal desarrollado para Gobernador IA que invierte la carga de la prueba de cumplimiento: en vez de que el regulador deba probar el incumplimiento, el sistema debe demostrar activamente su adherencia normativa.",
+     "definition_es": "Marco doctrinal desarrollado para Gobernador IA que invierte la carga de la prueba de cumplimiento: en vez de que el regulador deba probar el incumplimiento, el sistema demuestra conformidad.",
      "aliases": [], "frameworks": ["gobernanza_ia", "ley_21719"]}
   ]
 }
