@@ -1,15 +1,16 @@
 import json
 
 def agregar_a_ontologia(nuevos_nodos, nuevas_relaciones):
-    # 1. Cargar Ontología (manejando archivos vacíos)
+    # 1. Cargar Ontología (Manejando archivos vacíos o corruptos)
     try:
         with open("ontology.json", "r", encoding="utf-8") as f:
             content = f.read().strip()
+            # Si tiene contenido lo procesa, si está vacío crea una lista nueva
             ontology = json.loads(content) if content else []
     except (FileNotFoundError, json.JSONDecodeError):
         ontology = []
 
-    # 2. Cargar Relaciones (manejando archivos vacíos)
+    # 2. Cargar Relaciones (Manejando archivos vacíos o corruptos)
     try:
         with open("relations.json", "r", encoding="utf-8") as f:
             content = f.read().strip()
@@ -39,7 +40,7 @@ def agregar_a_ontologia(nuevos_nodos, nuevas_relaciones):
 
     print("\n¡Base normativa actualizada con éxito!")
 
-# Datos de la rama delitos_informaticos
+# --- DATOS DE LA RAMA DELITOS INFORMÁTICOS ---
 nodos_delitos = [
   {"id": "ley_21459", "name": "Ley N° 21.459 (Delitos Informáticos)", "branch": "delitos_informaticos", "definition": "Normativa chilena que adecua la legislación al Convenio de Budapest, tipificando delitos informáticos y estableciendo la responsabilidad penal de las personas jurídicas.", "risk_tier": "alto"},
   {"id": "acceso_ilicito", "name": "Acceso Ilícito (Art. 2)", "branch": "delitos_informaticos", "definition": "Acceder a un sistema informático sin autorización o excediendo la poseída, superando barreras técnicas o medidas tecnológicas de seguridad.", "risk_tier": "alto"},
